@@ -36,6 +36,7 @@ echo "source-file $SCRIPT_DIR/config/tmux.conf" > "$HOME/.tmux.conf"
 # Bash config
 {
     echo 'export TERM=xterm-256color'
+    echo 'export EDITOR=vim'
     echo 'set -o vi'
 } >> "$HOME/.bashrc"
 
