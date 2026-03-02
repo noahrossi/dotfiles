@@ -8,7 +8,7 @@ git config --global user.email "me@noahrossi.com"
 git config --global user.name "Noah Rossi"
 
 # GitHub token
-read -sp "Enter your GitHub token: " github_token
+read -sp "Enter your GitHub token (create at: https://github.com/settings/tokens): " github_token
 echo ""
 
 git config --global credential.helper store
