@@ -7,13 +7,16 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 git config --global user.email "me@noahrossi.com"
 git config --global user.name "Noah Rossi"
 
-# GitHub token
-read -sp "Enter your GitHub token (create at: https://github.com/settings/tokens): " github_token
+# GitHub SSH key
+if [ ! -f ~/.ssh/id_ed25519 ]; then
+    ssh-keygen -t ed25519 -N "" -q -f ~/.ssh/id_ed25519
+fi
 echo ""
-
-git config --global credential.helper store
-echo "https://oauth2:${github_token}@github.com" > "$HOME/.git-credentials"
-chmod 600 "$HOME/.git-credentials"
+echo "Add this SSH key to GitHub: https://github.com/settings/ssh/new"
+echo ""
+cat ~/.ssh/id_ed25519.pub
+echo ""
+read -p "Press Enter once you've added the key to GitHub..."
 
 # Optional HuggingFace auth
 read -p "Set up HuggingFace authentication? (y/N): " hf_auth

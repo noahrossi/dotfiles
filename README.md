@@ -24,7 +24,7 @@ Detects OS automatically (apt-get on Linux, brew on Mac). Skips anything already
 ### deploy.sh
 
 Configures the environment:
-- Git identity + GitHub token auth
+- Git identity + GitHub SSH key auth
 - Optional HuggingFace authentication (with custom `HF_HOME` support)
 - tmux config (mouse, 256 colors)
 - Bash settings (`vi` mode, `TERM=xterm-256color`)

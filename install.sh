@@ -27,6 +27,7 @@ fi
 # Install Claude Code
 if ! command -v claude &>/dev/null; then
     curl -fsSL https://claude.ai/install.sh | bash
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 fi
 
 # Install HuggingFace CLI
