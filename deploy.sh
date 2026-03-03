@@ -27,7 +27,7 @@ if [[ "${hf_auth,,}" == "y" ]]; then
         echo "export HF_HOME=\"$hf_home\"" >> "$HOME/.bashrc"
         export HF_HOME="$hf_home"
     fi
-    huggingface-cli login
+    uvx --from huggingface_hub hf auth login
 fi
 
 # Deploy tmux config
