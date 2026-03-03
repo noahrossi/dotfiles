@@ -13,7 +13,7 @@ else
 fi
 
 # Install system packages (idempotent)
-for pkg in tmux vim zip; do
+for pkg in tmux vim zip less; do
     if ! command -v "$pkg" &>/dev/null; then
         $INSTALL_CMD "$pkg"
     fi
